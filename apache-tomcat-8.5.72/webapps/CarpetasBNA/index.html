@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarpetasBNA</title>
+    <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script></head>
+<body>
+    <button id="download">Descargar PDF Modificado</button>
+    <script>
+        $('#download').on('click', function() {
+            // Usar AJAX para cargar el PDF
+            $.ajax({
+                url: 'http://localhost:8080/CarpetasBNA/PDF/CARPETA_ATM.pdf',
+                method: 'GET',
+                xhrFields: {
+                    responseType: 'arraybuffer' // Importante para obtener el PDF como ArrayBuffer
+                },
+                success: async function(data) {
+                    const pdfDoc = await PDFLib.PDFDocument.load(data);
+                    const pages = pdfDoc.getPages();
+                    pages.forEach((page, index) => {
+                        page.drawText(`Dato en página ${index + 1}`, {
+                            x: 50,
+                            y: 500,
+                            size: 30,
+                            color: PDFLib.rgb(0, 0, 0),
+                        });
+                    });
+
+                    const pdfBytes = await pdfDoc.save();
+                    const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+                    const link = document.createElement('a');
+                    link.href = URL.createObjectURL(blob);
+                    link.download = 'modified.pdf';
+                    link.click();
+                },
+                error: function() {
+                    console.error('Error al cargar el PDF');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
