@@ -1,46 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CarpetasBNA</title>
-    <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script></head>
+    <title>CarpetasBna</title>
+    <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="Styles/Styles.css">
+</head>
 <body>
-    <button id="download">Descargar PDF Modificado</button>
-    <script>
-        $('#download').on('click', function() {
-            // Usar AJAX para cargar el PDF
-            $.ajax({
-                url: 'http://localhost:8080/CarpetasBNA/PDF/CARPETA_ATM.pdf',
-                method: 'GET',
-                xhrFields: {
-                    responseType: 'arraybuffer' // Importante para obtener el PDF como ArrayBuffer
-                },
-                success: async function(data) {
-                    const pdfDoc = await PDFLib.PDFDocument.load(data);
-                    const pages = pdfDoc.getPages();
-                    pages.forEach((page, index) => {
-                        page.drawText(`Dato en página ${index + 1}`, {
-                            x: 50,
-                            y: 500,
-                            size: 30,
-                            color: PDFLib.rgb(0, 0, 0),
-                        });
-                    });
+    <h1>Creador de carpetas BNA</h1>
+    <h2>Desarrollado por Franco Donato Gonzalez</h2>
 
-                    const pdfBytes = await pdfDoc.save();
-                    const blob = new Blob([pdfBytes], { type: 'application/pdf' });
-                    const link = document.createElement('a');
-                    link.href = URL.createObjectURL(blob);
-                    link.download = 'modified.pdf';
-                    link.click();
-                },
-                error: function() {
-                    console.error('Error al cargar el PDF');
-                }
-            });
-        });
-    </script>
+    <div id="divTecnico" class="container-fluid">
+
+        <h3>Datos del Tecnico</h3>
+
+        <label for="NombreTecnico" class="form-label">Nombre</label>
+        <input type="text" class="form-control-sm" id="NombreTecnico">
+        <label for="ApellidoTecnico" class="form-label">Apellido</label>
+        <Input type="text" class="form-control-sm" id="ApellidoTecnico"></Input>
+        <label for="legajoTecnico" class="form-label">Legajo</label>
+        <input type="text" class="form-control-sm" id="legajoTecnico">
+        <label for="fechaInstalacion" class="form-label">Fecha de instalación</label>
+        <input type="date" class="form-control-sm" id="fechaInstalacion">
+        
+    </div>
+
+    <div id="divDatosCajeros">
+
+        <div id="divCajeroNuevo">
+            
+            <h3>Datos del equipo nuevo</h3>
+            
+            <label for="idNuevo" class="form-label">ID</label>
+            <input type="text" id="idCajero" class="form-control-sm">
+            <label for="serieNuevo" class="form-label">Serial</label>
+            <input type="text" id="serieNuevo" class="form-control-sm">
+            <label for="modeloNuevo" class="form-label">Modelo</label>
+            <select name="modelos" id="modeloNuevo"class="form-control-sm">
+                <option value=1>CT 100D RL</option>
+                <option value=2>CD 100D FL</option>
+                <option value=3>FET 200V RL</option>
+                <option value=4>FECT 200V RL</option>
+                
+            </select>
+        <label for="posicionCajero"class="form-label">Posición</label>
+        <select name="posicion" id="posicionCajero"class="form-control-sm">
+            <option value=2>Nueva Posición</option>
+            <option value=1>Recambio</option>
+        </select>
+    </div>
+    
+    <div id="divCajeroViejo">
+        <h3>Datos del cajero viejo</h3>
+        
+        <label for="serieViejo" class="form-label">Serial</label>
+        <input type="text" id="serieViejo" class="form-control-sm">
+        <label for="modeloViejo" class="form-label">Modelo</label>
+        <input type="text" id="modeloViejo" class="form-control-sm">
+        
+    </div>
+</div>
+    
+    <button id="cargarPDF"  class="btn btn-outline-primary">Cargar PDF</button>
+
+    <script src="JS/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
-</html>
+</html
