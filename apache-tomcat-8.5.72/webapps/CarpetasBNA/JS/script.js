@@ -12,6 +12,22 @@ document.getElementById('cargarPDF').addEventListener('click', async function ()
     var modeloNuevo = document.getElementById("modeloNuevo").value;
     var posicionCajero = document.getElementById("posicionCajero").value;
 
+    var serieViejo = document.getElementById("serieViejo").value;
+    var modeloViejo = document.getElementById("modeloViejo").value;
+
+    var codigoSuc = document.getElementById("codigoSuc").value;
+    var nombreSuc = document.getElementById("NombreSuc").value;
+    var provinciaSuc = document.getElementById("ProvinciaSuc").value;
+    var localidadSuc = document.getElementById("LocalidadSuc").value;
+    var direccionSuc = document.getElementById("DireccionSuc").value;
+
+    var direcIP = document.getElementById("direcIp").value;
+    var gateIp = document.getElementById("gateIp").value;
+    var mask = document.getElementById("mask").value;
+    var nombreSO = document.getElementById("nombreSO").value;
+    var procesador = document.getElementById("procesador").value;
+    var versionApp = document.getElementById("versionApp").value;
+
     // Fetch el PDF
 
     const existingPdfBytes = await fetch(pdfUrl).then(res => res.arrayBuffer());
@@ -23,7 +39,10 @@ document.getElementById('cargarPDF').addEventListener('click', async function ()
     var pages = pdfDoc.getPages();
 
     datosTecnico(NombreTecnico, ApellidoTecnico, legajoTecnico, fechaInstalacion, pages);
+    datoSucursal(codigoSuc, nombreSuc, provinciaSuc, localidadSuc, direccionSuc, pages);
     datosCajeroNuevo(idCajero, serieNuevo, modeloNuevo, posicionCajero, pages);
+    datosCajeroViejo(serieViejo, modeloViejo, pages);
+    datosRedes_Pc(direcIP, gateIp, mask, nombreSO, procesador, versionApp, pages);
    
     // Guardar el PDF modificado
     
@@ -34,20 +53,24 @@ document.getElementById('cargarPDF').addEventListener('click', async function ()
     const blob = new Blob([pdfBytes], { type: 'application/pdf' });
     const link = document.createElement('a');
     link.href = URL.createObjectURL(blob);
-    link.download = 'CarpetaBNA_id = ' + idCajero + '.pdf';
+    link.download = 'CarpetaBNA_id_' + idCajero + '.pdf';
     link.click();
 });
 
 //Mostrar y ocultar div cajero viejo
 
-document.getElementById("posicionCajero").addEventListener('change', function() {
+    document.getElementById("posicionCajero").addEventListener('change', function() {
     var div = document.getElementById('divCajeroViejo');
     if (this.value === '1') {
         div.classList.add('show')
-    } else {
+    }
+    else {
         div.classList.remove('show');
     }
   });
+
+
+  //Datos del tecnico actuante
 
 function datosTecnico(NombreTecnico, ApellidoTecnico, legajoTecnico, fechaInstalacion, pages)
 {
@@ -80,9 +103,7 @@ function datosTecnico(NombreTecnico, ApellidoTecnico, legajoTecnico, fechaInstal
          x: 250,
          y: 80,
          size: 10,
-        });
-     // Modificar el nombre
-        
+        });        
 
      i++;
      }while(i < pages.length -1);
@@ -95,8 +116,149 @@ function datosTecnico(NombreTecnico, ApellidoTecnico, legajoTecnico, fechaInstal
          size: 10,
         });
 
+        PaginaActual = pages[4];
+        PaginaActual.drawText("" + fechaInstalacion,
+            {
+                x: 410,
+                y: 460,
+                size: 18,
+            }
+    
+        );
+        
+
+    PaginaActual = pages[9];
+    PaginaActual.drawText("" + fechaInstalacion,
+            {
+                x: 450,
+                y: 770,
+                size: 10,
+            }
+    
+        );
+
 }
+
+//Funcion para ingresar los datos de la sucursal
+
+function datoSucursal(codigoSuc, nombreSuc, provinciaSuc, localidadSuc, direccionSuc, pages){
+
+    var PaginaActual = pages[0];
+    PaginaActual.drawText("" + codigoSuc,
+        {
+            x:150,
+            y:538,
+            size:16,
+        }
+    );
+    PaginaActual.drawText("" + nombreSuc.toUpperCase(),
+        {
+            x:370,
+            y:538,
+            size:16,
+        }
+    );
+    PaginaActual.drawText("" + direccionSuc.toUpperCase(),
+        {
+            x:150,
+            y:477,
+            size:16,
+        }
+    );
+    PaginaActual.drawText("" + localidadSuc.toUpperCase(),
+        {
+            x:150,
+            y:457,
+            size:16,
+        }
+    );
+    PaginaActual.drawText("" + provinciaSuc.toUpperCase(),
+        {
+            x:150,
+            y:437,
+            size:16,
+        }
+    );
+
+    //Carga en pagina 4 
+
+    PaginaActual = pages[3];
+    PaginaActual.drawText("" + codigoSuc,
+        {
+            x: 90,
+            y: 395,
+            size: 10,
+        }
+
+    );
+    PaginaActual.drawText("" + nombreSuc.toUpperCase(),
+        {
+            x:200,
+            y:395,
+            size:10,
+        }
+    );
+
+    //Pagina 5
+
+    PaginaActual = pages[4];
+    PaginaActual.drawText("" + codigoSuc,
+        {
+            x: 80,
+            y: 550,
+            size: 18,
+        }
+
+    );
+    PaginaActual.drawText("" + nombreSuc.toUpperCase(),
+        {
+            x:150,
+            y:550,
+            size:18,
+        }
+    );
+
+    PaginaActual = pages[9];
+    PaginaActual.drawText("" + codigoSuc,
+            {
+                x: 80,
+                y: 770,
+                size: 10,
+            }
+    
+        );
+
+    PaginaActual.drawText("" + nombreSuc.toUpperCase(),
+                {
+                    x: 180,
+                    y: 770,
+                    size: 10,
+                }
+        
+            );
+
+    PaginaActual = pages[10];
+    PaginaActual.drawText("" + codigoSuc,
+            {
+                x: 110,
+                y: 685,
+                size: 10,
+            }
+    
+        );
+    PaginaActual = pages[11];
+    PaginaActual.drawText("" + codigoSuc,
+            {
+                x: 110,
+                y: 705,
+                size: 10,
+            }
+    
+        );
+}
+
 //Funcion para pegar los datos del cajero nuevo
+
 function datosCajeroNuevo(idCajero, serieNuevo, modeloNuevo, posicionCajero, pages){
 
     var PaginaActual = pages[0];
@@ -134,8 +296,10 @@ function datosCajeroNuevo(idCajero, serieNuevo, modeloNuevo, posicionCajero, pag
             }
         );
     }
+
 //Eleccion de modelo de equipo
-    switch(modeloNuevo){
+
+switch(modeloNuevo){
         case '1':
             PaginaActual.drawText("X",
                 {
@@ -144,6 +308,16 @@ function datosCajeroNuevo(idCajero, serieNuevo, modeloNuevo, posicionCajero, pag
                     size:10,
                 }
             );
+
+            PaginaActual=pages[10]
+            PaginaActual.drawText("CT 100D RL",
+                {
+                    x: 300,
+                    y: 685,
+                    size: 10,
+                }
+            
+                );
             break;
         case '2':
             PaginaActual.drawText("X",
@@ -153,15 +327,33 @@ function datosCajeroNuevo(idCajero, serieNuevo, modeloNuevo, posicionCajero, pag
                     size:10,
                 }
             );
+            PaginaActual=pages[10]
+            PaginaActual.drawText("CD 100D FL",
+                {
+                    x: 300,
+                    y: 685,
+                    size: 10,
+                }
+            
+                );
             break;
         case '3':
             PaginaActual.drawText("X",
                 {
-                    x:408,
+                    x:410,
                     y:317,
                     size:10,
                 }
             );
+            PaginaActual=pages[10]
+            PaginaActual.drawText("FET 200V RL",
+                {
+                    x: 300,
+                    y: 685,
+                    size: 10,
+                }
+            
+                );
             break;
         case '4':
             PaginaActual.drawText("X",
@@ -171,16 +363,133 @@ function datosCajeroNuevo(idCajero, serieNuevo, modeloNuevo, posicionCajero, pag
                     size:10,
                 }
             );
+            PaginaActual=pages[10]
+            PaginaActual.drawText("FECT 200V RL",
+                {
+                    x: 300,
+                    y: 685,
+                    size: 10,
+                }
+            
+                );
             break;
             
     }
 
     PaginaActual = pages[3];
+
      PaginaActual.drawText("" + idCajero, 
         {
          x: 395,
          y: 395,
          size: 10,
         });
+
+        PaginaActual = pages[4];
+        PaginaActual.drawText("" + idCajero,
+            {
+                x: 100,
+                y: 460,
+                size: 18,
+            }
+    
+        );
+       
+        PaginaActual = pages[10];
+        PaginaActual.drawText("" + idCajero,
+                {
+                    x: 450,
+                    y: 685,
+                    size: 8,
+                }
+        
+            );
+
+            PaginaActual.drawText("" + serieNuevo,
+                {
+                    x: 200,
+                    y: 685,
+                    size: 8,
+                }
+        
+            );
+            PaginaActual = pages[11];
+            PaginaActual.drawText("" + idCajero,
+                    {
+                        x: 450,
+                        y: 705,
+                        size: 8,
+                    }
+            
+                );
+
 }
 
+function datosCajeroViejo(serieViejo, modeloViejo, pages){
+
+    PaginaActual = pages[11];
+    PaginaActual.drawText("" + serieViejo,
+            {
+                x: 200,
+                y: 705,
+                size: 8,
+            }
+    
+        );
+    PaginaActual.drawText("" + modeloViejo,
+        {
+            x: 300,
+            y: 705,
+            size: 8,
+        }
+    
+        );
+
+}
+function datosRedes_Pc (direcIP, gateIp, mask, nombreSO, procesador, versionApp, pages){
+
+    var PaginaActual = pages[1];
+    PaginaActual.drawText("" + direcIP,
+        {
+            x: 250,
+            y: 650,
+            size: 20,
+        }
+    )
+    PaginaActual.drawText("" + gateIp,
+        {
+            x: 250,
+            y: 610,
+            size: 20,
+        }
+    )
+    PaginaActual.drawText("" + mask,
+        {
+            x: 250,
+            y: 560,
+            size: 20,
+        }
+    )
+    PaginaActual.drawText("" + nombreSO.toUpperCase(),
+        {
+            x: 250,
+            y: 470,
+            size: 20,
+        }
+    )
+    PaginaActual.drawText("" + procesador.toUpperCase(),
+        {
+            x: 250,
+            y: 420,
+            size: 20,
+        }
+    )
+    PaginaActual.drawText("" + versionApp.toUpperCase(),
+        {
+            x: 250,
+            y: 380,
+            size: 20,
+        }
+    )
+
+}

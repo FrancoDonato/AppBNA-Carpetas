@@ -26,6 +26,22 @@
         <input type="date" class="form-control-sm" id="fechaInstalacion">
         
     </div>
+    <div id="divDatosSucursal">
+
+        <h3>Datos de la sucursal</h3>
+
+        <label for="codigoSuc">Codigo</label>
+        <input type="text" id="codigoSuc" class="form-control-sm">
+        <label for="NombreSuc">Nombre </label>
+        <input type="text" id="NombreSuc" class="form-control-sm">
+        <label for="ProvinciaSuc">Provincia</label>
+        <input type="text" id="ProvinciaSuc" class="form-control-sm">
+        <label for="LocalidadSuc">Localidad</label>
+        <input type="text" id="LocalidadSuc" class="form-control-sm">
+        <label for="DireccionSuc">Direccion</label>
+        <input type="text" id="DireccionSuc" class="form-control-sm">
+
+    </div>
 
     <div id="divDatosCajeros">
 
@@ -47,7 +63,7 @@
             </select>
         <label for="posicionCajero"class="form-label">Posición</label>
         <select name="posicion" id="posicionCajero"class="form-control-sm">
-            <option value=2>Nueva Posición</option>
+            <option value=2 >Nueva Posición</option>
             <option value=1>Recambio</option>
         </select>
     </div>
@@ -61,6 +77,25 @@
         <input type="text" id="modeloViejo" class="form-control-sm">
         
     </div>
+</div>
+
+<div id="divDatoSoft">
+
+    <h3>Datos de Red/PC</h3>
+
+    <label for="direcIp">Dirección IP</label>
+    <input type="text" id="direcIp" class="form-control-sm">
+    <label for="gateIp">Dirección IP Gateway</label>
+    <input type="text" id="gateIp" class="form-control-sm">
+    <label for="mask">Mascara</label>
+    <input type="text" id="mask" class="form-control-sm">
+    <label for="nombreSO">Sistema Operativo</label>
+    <input type="text" id="nombreSO" class="form-control-sm">
+    <label for="procesador">Tipo de procesador</label>
+    <input type="text" id="procesador" class="form-control-sm">
+    <label for="versionApp">Version de la aplicacion</label>
+    <input type="text" id="versionApp" class="form-control-sm">
+
 </div>
     
     <button id="cargarPDF"  class="btn btn-outline-primary">Cargar PDF</button>

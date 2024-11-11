@@ -24,6 +24,23 @@ body{
     padding: 0.5rem;
     box-shadow:10px 5px 10px 5px rgba(86, 17, 120, 0.675)
 }
+
+#divDatosSucursal
+{
+    width: 30%;
+    height: 35vw;
+    border-radius: 10%;
+    border-style: solid;
+    border-color:black;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    display: flex;
+    margin: 1rem;
+    padding: 0.5rem;
+    box-shadow:10px 5px 10px 5px rgba(86, 17, 120, 0.675)
+}
 #divDatosCajeros
 {
     width: 100%;
@@ -50,10 +67,10 @@ body{
 
 }
 
-#cargarPDF{
+/* #cargarPDF{
     display: flex;
     margin: 1rem;
-}
+} */
 
 #divCajeroViejo{
     display: none;
@@ -75,3 +92,30 @@ body{
     box-shadow:10px 5px 10px 5px rgba(86, 17, 120, 0.675);
 }
 
+#divDatoSoft{
+    width: 30%;
+    height: 35vw;
+    border-radius: 10%;
+    border-style: solid;
+    border-color:black;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    display: flex;
+    margin: 1rem;
+    padding: 0.5rem;
+    box-shadow:10px 5px 10px 5px rgba(86, 17, 120, 0.675);
+}
+
+
+@media (max-width: 600px) {
+
+    #divTecnico{
+        width: 80%;
+        height: 80vw;
+        margin: 0,5rem;
+
+    }
+
+}
