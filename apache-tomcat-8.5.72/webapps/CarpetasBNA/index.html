@@ -53,7 +53,7 @@
             <input type="text" id="idCajero" class="form-control-sm">
             <label for="serieNuevo" class="form-label">Serial</label>
             <input type="text" id="serieNuevo" class="form-control-sm">
-            <label for="modeloNuevo" class="form-label">Modelo</label>
+            <p class="form-label">Modelo</p>
             <select name="modelos" id="modeloNuevo"class="form-control-sm">
                 <option value=1>CT 100D RL</option>
                 <option value=2>CD 100D FL</option>
@@ -61,7 +61,7 @@
                 <option value=4>FECT 200V RL</option>
                 
             </select>
-        <label for="posicionCajero"class="form-label">Posición</label>
+        <p class="form-label">Posición</p>
         <select name="posicion" id="posicionCajero"class="form-control-sm">
             <option value=2 >Nueva Posición</option>
             <option value=1>Recambio</option>
@@ -98,10 +98,74 @@
 
 </div>
     
-    <button id="cargarPDF"  class="btn btn-outline-primary">Cargar PDF</button>
+<div id="divDatosInstalacion">
 
-    <script src="JS/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <p>1_ Condiciones de recinto</p>
+    <select name="recintoATM" id="recintoATM">
+        <option value="Buenas">Buenas</option>
+        <option value="Regulares">Regulares</option>
+        <option value="Malas">Malas</option>
+    </select>
+    <label for="recintoObservaciones">Observaciones de recinto</label>
+    <input type="text" id="recintoObservaciones" class="form-control-sm"">
+    <p>2_ Capacitacion de operadores?</p>
+    <select name="capOperadores" id="capOperadores">
+        <option value="Si">Si</option>
+        <option value="No">No</option>
+    </select>
+    <p>3_ Manual de operador en español?</p>
+    <select name="manualOperador" id="manualOperador">
+        <option value="Si">Si</option>
+        <option value="No">No</option>
+    </select>
+    <p>4_ Doble juego de gavetas?</p>
+    <select name="" id="">
+        <option value="Si">Si</option>
+        <option value="No">No</option>
+    </select>
+    <p>5_ Transaccion de prueba</p>
+    <select name="" id="">
+        <option value="Si">Si</option>
+        <option value="No">No</option>
+    </select>
+    <p>6_ Limpieza de zona de obra</p>
+    <select name="" id="">
+        <option value="Satisfactoria">Satisfactoria</option>
+        <option value="Regular">Regular</option>
+        <option value="Mala">Mala</option>
+    </select>
+    <p>7_ Retiro de camara CCTV</p>
+    <select name="" id="">
+        <option value="Fuera del ATM">Fuera del ATM</option>
+        <option value="Dentro del ATM">Dentro del ATM</option>
+    </select>
+    <p>9_ Auditoria centralizada</p>
+    <select name="" id="">
+        <option value="Si">Si</option>
+        <option value="No">No</option>
+    </select>
+    <p>10_ Equipo para no videntes</p>
+    <select name="" id="">
+        <option value="Si">Si</option>
+        <option value="No">No</option>
+    </select>
+    <p>11_ Punto efectivo</p>
+    <select name="" id="">
+        <option value="Si">Si</option>
+        <option value="No">No</option>
+    </select>
+    <p>12_ Biometria Anses</p>
+    <select name="" id="">
+        <option value="Si">Si</option>
+        <option value="No">No</option>
+    </select>
+    <label for="observGenerales">13_ Observaciones generales</label>
+    <input type="text" id="observGenerales" class="form-control-sm">
+</div>
+<button id="cargarPDF"  class="btn btn-outline-primary">Cargar PDF</button>
+
+<script src="JS/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html
