@@ -12,18 +12,22 @@
     <h1>Creador de carpetas BNA</h1>
     <h2>Desarrollado por Franco Donato Gonzalez</h2>
 
-    <div id="divTecnico" class="container-fluid">
+    <div id="divTecnico">
 
         <h3>Datos del Tecnico</h3>
 
-        <input type="text" class="form-control" id="NombreTecnico" placeholder="name@example.com">
-        <label for="NombreTecnico">Nombre de Tecnico</label>
-        <label for="NombreTecnico" class="form-label">Nombre</label>
-        <input type="text" class="form-control-sm" id="NombreTecnico">
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="NombreTecnico" placeholder="Nombre de tecnico">
+            <label for="NombreTecnico" class="form-label">Nombre</label>
+        </div>
+        <div class="form-floating mb-3">
+        <Input type="text" class="form-control" id="ApellidoTecnico" placeholder="Apellido de tecnico"></Input>
         <label for="ApellidoTecnico" class="form-label">Apellido</label>
-        <Input type="text" class="form-control-sm" id="ApellidoTecnico"></Input>
-        <label for="legajoTecnico" class="form-label">Legajo</label>
-        <input type="text" class="form-control-sm" id="legajoTecnico">
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="legajoTecnico" placeholder="Legajo Tecnico">
+            <label for="legajoTecnico" class="form-label">Legajo</label>
+        </div>
         <label for="fechaInstalacion" class="form-label">Fecha de instalación</label>
         <input type="date" class="form-control-sm" id="fechaInstalacion">
         
@@ -32,16 +36,26 @@
 
         <h3>Datos de la sucursal</h3>
 
-        <label for="codigoSuc">Codigo</label>
-        <input type="text" id="codigoSuc" class="form-control-sm">
-        <label for="NombreSuc">Nombre </label>
-        <input type="text" id="NombreSuc" class="form-control-sm">
-        <label for="ProvinciaSuc">Provincia</label>
-        <input type="text" id="ProvinciaSuc" class="form-control-sm">
-        <label for="LocalidadSuc">Localidad</label>
-        <input type="text" id="LocalidadSuc" class="form-control-sm">
-        <label for="DireccionSuc">Direccion</label>
-        <input type="text" id="DireccionSuc" class="form-control-sm">
+        <div class="form-floating mb-3">
+            <input type="text" id="codigoSuc" class="form-control" placeholder="Codigo de sucursal">
+            <label for="codigoSuc">Codigo</label>
+        </div>   
+        <div class="form-floating mb-3">
+            <input type="text" id="NombreSuc" class="form-control" placeholder="Nombre sucursal">
+            <label for="NombreSuc">Nombre </label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" id="ProvinciaSuc" class="form-control" placeholder="Provincia">
+            <label for="ProvinciaSuc">Provincia</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" id="LocalidadSuc" class="form-control" placeholder="Localidad">
+            <label for="LocalidadSuc">Localidad</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" id="DireccionSuc" class="form-control" placeholder="Direccion">
+            <label for="DireccionSuc">Direccion</label>
+        </div>
 
     </div>
 
@@ -51,10 +65,14 @@
             
             <h3>Datos del equipo nuevo</h3>
             
-            <label for="idNuevo" class="form-label">ID</label>
-            <input type="text" id="idCajero" class="form-control-sm">
-            <label for="serieNuevo" class="form-label">Serial</label>
-            <input type="text" id="serieNuevo" class="form-control-sm">
+            <div class="form-floating mb-3">
+                <input type="text" id="idCajero" class="form-control" placeholder="ID">
+                <label for="idNuevo" class="form-label">ID</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" id="serieNuevo" class="form-control" placeholder="Serial">
+                <label for="serieNuevo" class="form-label">Serial</label>
+            </div>
             <p class="form-label">Modelo</p>
             <select name="modelos" id="modeloNuevo"class="form-control-sm">
                 <option value=1>CT 100D RL</option>
@@ -73,10 +91,14 @@
     <div id="divCajeroViejo">
         <h3>Datos del cajero viejo</h3>
         
-        <label for="serieViejo" class="form-label">Serial</label>
-        <input type="text" id="serieViejo" class="form-control-sm">
-        <label for="modeloViejo" class="form-label">Modelo</label>
-        <input type="text" id="modeloViejo" class="form-control-sm">
+        <div class="form-floating mb-3">
+            <input type="text" id="serieViejo" class="form-control" placeholder="Serial">
+            <label for="serieViejo" class="form-label">Serial</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" id="modeloViejo" class="form-control" placeholder="Modelo">
+            <label for="modeloViejo" class="form-label">Modelo</label>
+        </div>
         
     </div>
 </div>
@@ -84,19 +106,30 @@
 <div id="divDatoSoft">
 
     <h3>Datos de Red/PC</h3>
-
-    <label for="direcIp">Dirección IP</label>
-    <input type="text" id="direcIp" class="form-control-sm">
-    <label for="gateIp">Dirección IP Gateway</label>
-    <input type="text" id="gateIp" class="form-control-sm">
-    <label for="mask">Mascara</label>
-    <input type="text" id="mask" class="form-control-sm">
-    <label for="nombreSO">Sistema Operativo</label>
-    <input type="text" id="nombreSO" class="form-control-sm">
-    <label for="procesador">Tipo de procesador</label>
-    <input type="text" id="procesador" class="form-control-sm">
-    <label for="versionApp">Version de la aplicacion</label>
-    <input type="text" id="versionApp" class="form-control-sm">
+    <div class="form-floating mb-3">
+        <input type="text" id="direcIp" class="form-control" placeholder="Direccion IP">
+        <label for="direcIp">Dirección IP</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="text" id="gateIp" class="form-control" placeholder="Gateway">
+        <label for="gateIp">Dirección IP Gateway</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="text" id="mask" class="form-control" placeholder="Mask">
+        <label for="mask">Mascara</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="text" id="nombreSO" class="form-control" placeholder="Sistema Operativo">
+        <label for="nombreSO">Sistema Operativo</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="text" id="procesador" class="form-control" placeholder="Procesador">
+        <label for="procesador">Tipo de procesador</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="text" id="versionApp" class="form-control" placeholder="Version">
+        <label for="versionApp">Version de la aplicacion</label>
+    </div>
 
 </div>
     
@@ -207,7 +240,6 @@
     <input type="text" id="nombreEstablizador">
     <P>Puesta a tierra</P>
     <select name="" id="puestaTierra">
-
         <option value="Si">Si</option>
         <option value="No">No</option>
     </select>

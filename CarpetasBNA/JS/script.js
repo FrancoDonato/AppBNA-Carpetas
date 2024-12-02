@@ -49,6 +49,15 @@ document.getElementById('cargarPDF').addEventListener('click', async function ()
     var biomAnses = document.getElementById("biomAnses").value;
     var observGenerales = document.getElementById("observGenerales").value;
 
+    var ups = document.getElementById("UPS").value;
+    var tableroC = document.getElementById("TableroC").value;
+    var alimentacionTableroC = document.getElementById("alimentacionTableroC").value;
+    var estabilizador = document.getElementById("Estabilizador").value;
+    var nombreEstabilizador = document.getElementById("nombreEstabilizazdor").value;
+    var puestaTierra = document.getElementById("puestaTierra").value;
+    var valoresTierra = document.getElementById("valoresTierra").value;
+    var C_soloATM = document.getElementById("C_soloATM").value;
+    var otrosElementos = document.getElementById("otroElementos").value;
     // Fetch el PDF
 
     const existingPdfBytes = await fetch(pdfUrl).then(res => res.arrayBuffer());
@@ -65,7 +74,7 @@ document.getElementById('cargarPDF').addEventListener('click', async function ()
     datosCajeroViejo(serieViejo, modeloViejo, pages);
     datosRedes_Pc(direcIP, gateIp, mask, nombreSO, procesador, versionApp, pages);
     datosInstalacion(recintoATM, recintoObservaciones, capOperadores, horasCapacitacion,observCapacitacion,manualOperador,juegoGavetas,transaccionPrueba,limpiezaObras, observacionesLimp, camCCTV,rollosCliente,rollosAuditoria,cantCartuchos,auditoriaCentralizada,equipoNoVidente,idNoVidente,puntoEfectivo,biomAnses,observGenerales, pages);
-   
+    
     // Guardar el PDF modificado
     
     pdfBytes = await pdfDoc.save();
@@ -836,4 +845,9 @@ function datosInstalacion(recintoATM, recintoObservaciones, capOperadores, horas
                 size: 14,
             }
         )
+}
+
+function datosElectricos()
+{
+
 }
