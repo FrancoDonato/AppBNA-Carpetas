@@ -847,7 +847,7 @@ function datosInstalacion(recintoATM, recintoObservaciones, capOperadores, horas
         )
 }
 
-function datosElectricos()
-{
-
-}
+//function datosElectricos()
+//{
+//
+//}
