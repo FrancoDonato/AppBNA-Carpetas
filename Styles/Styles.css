@@ -164,7 +164,28 @@ nav{
     backdrop-filter: blur(0.4rem);
     box-shadow:1px 1px 10px 1px rgba(0, 0, 0, 0.296);}
 
+footer{
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 1rem;
+    background-color: rgb(39, 96, 240);
+    width: 100%;
+    height: 20vh;
+}
+#contactos{
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    gap: 2rem;
+}
 
+#contactos a{
+    color: aliceblue;
+}
+#contactos a:hover{
+    color: rgb(22, 55, 83);
+}
 @media (max-width: 1250px) {
 
     body{
