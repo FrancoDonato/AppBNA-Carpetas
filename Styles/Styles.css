@@ -434,6 +434,9 @@ footer{
         margin: 1rem;
     }
 
+    footer{
+        height: 30vh;
+    }
     #cargarPDF{
         display: flex;
         width: 60%;
