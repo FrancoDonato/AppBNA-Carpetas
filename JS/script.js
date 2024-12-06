@@ -847,6 +847,10 @@ function datosInstalacion(recintoATM, recintoObservaciones, capOperadores, horas
         )
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> b4ab12d23b56a537b0d9d887786a2cb5fa49a557
 function datosElectricos(ups, tableroC, alimentacionTableroC, estabilizador, nombreEstabilizador, puestaTierra, valoresTierra, C_soloATM, otrosElementos, pages)
 {
 
