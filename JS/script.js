@@ -53,11 +53,11 @@ document.getElementById('cargarPDF').addEventListener('click', async function ()
     var tableroC = document.getElementById("TableroC").value;
     var alimentacionTableroC = document.getElementById("alimentacionTableroC").value;
     var estabilizador = document.getElementById("Estabilizador").value;
-    var nombreEstabilizador = document.getElementById("nombreEstabilizazdor").value;
+    var nombreEstabilizador = document.getElementById("nombreEstablizador").value;
     var puestaTierra = document.getElementById("puestaTierra").value;
     var valoresTierra = document.getElementById("valoresTierra").value;
     var C_soloATM = document.getElementById("C_soloATM").value;
-    var otrosElementos = document.getElementById("otroElementos").value;
+    var otrosElementos = document.getElementById("otrosElementos").value;
     // Fetch el PDF
 
     const existingPdfBytes = await fetch(pdfUrl).then(res => res.arrayBuffer());
@@ -74,7 +74,7 @@ document.getElementById('cargarPDF').addEventListener('click', async function ()
     datosCajeroViejo(serieViejo, modeloViejo, pages);
     datosRedes_Pc(direcIP, gateIp, mask, nombreSO, procesador, versionApp, pages);
     datosInstalacion(recintoATM, recintoObservaciones, capOperadores, horasCapacitacion,observCapacitacion,manualOperador,juegoGavetas,transaccionPrueba,limpiezaObras, observacionesLimp, camCCTV,rollosCliente,rollosAuditoria,cantCartuchos,auditoriaCentralizada,equipoNoVidente,idNoVidente,puntoEfectivo,biomAnses,observGenerales, pages);
-    
+    datosElectricos(ups, tableroC, alimentacionTableroC, estabilizador, nombreEstabilizador, puestaTierra, valoresTierra, C_soloATM, otrosElementos, pages);
     // Guardar el PDF modificado
     
     pdfBytes = await pdfDoc.save();
@@ -847,7 +847,143 @@ function datosInstalacion(recintoATM, recintoObservaciones, capOperadores, horas
         )
 }
 
-function datosElectricos()
+function datosElectricos(ups, tableroC, alimentacionTableroC, estabilizador, nombreEstabilizador, puestaTierra, valoresTierra, C_soloATM, otrosElementos, pages)
 {
 
+    PaginaActual = pages[9];
+
+    if(ups == 'Si'){
+
+        PaginaActual.drawText("Si", 
+            {
+                x: 130,
+                y: 630,
+                size: 14,
+            }
+        )}
+    else{
+        PaginaActual.drawText("No", 
+            {
+                x: 280,
+                y: 630,
+                size: 14,
+            }
+        )
+    }
+
+    if(tableroC =="Si"){
+        PaginaActual.drawText("Si", 
+            {
+                x: 130,
+                y: 560,
+                size: 14,
+            }
+        )
+    }
+    else{
+        PaginaActual.drawText("No",
+            {
+                x: 280,
+                y: 560,
+                size: 14,
+            }
+        )
+    }
+
+    if(alimentacionTableroC =="Si"){
+        PaginaActual.drawText("Si",
+            {
+                x:130,
+                y:490,
+                size:14,
+            })
+    }
+    else{
+        PaginaActual.drawText("No",
+            {
+                x:280,
+                y:490,
+                size:14,
+            })
+    }
+
+    if(estabilizador =="Si"){
+        PaginaActual.drawText("Si",
+            {
+                x:130,
+                y:422,
+                size:14,
+            })
+
+            PaginaActual.drawText(nombreEstabilizador,
+                {
+                    x:180,
+                    y:390,
+                    size:14,
+                })
+
+    }
+    else{
+        PaginaActual.drawText("No",
+            {
+                x:280,
+                y:422,
+                size:14,
+            })
+    }
+
+    if(puestaTierra =="Si"){
+        PaginaActual.drawText("Si",
+            {
+                x:130,
+                y:300,
+                size:14,
+            }
+        )
+
+        PaginaActual.drawText(valoresTierra,
+            {
+                x:130,
+                y:272,
+                size:14,
+            }
+        )
+    }
+    else{
+        PaginaActual.drawText("No",
+            {
+                x:280,
+                y:300,
+                size:14,
+            }
+        )
+    }
+
+    if(C_soloATM=="Si")
+    {
+        PaginaActual.drawText("Si",
+            {
+            x:130,
+            y:215,
+            size:14
+            }
+        )
+    }
+    else{
+        PaginaActual.drawText("No",
+            {
+            x:300,
+            y:215,
+            size:14
+            }
+        )
+    }
+
+    PaginaActual.drawText(otrosElementos,
+        {
+            x:100,
+            y:170,
+            size:14
+        }
+    )
 }

@@ -9,9 +9,27 @@
     <link rel="stylesheet" href="Styles/Styles.css">
 </head>
 <body>
-    <h1>Creador de carpetas BNA</h1>
-    <h2>Desarrollado por Franco Donato Gonzalez</h2>
+    
+    <nav id="navbar" class="navbar fixed-top navbar-dark bg-primary">
+        <div class="container-fluid">
+            <div class="dropdown">
+                <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <li><a class="dropdown-item" href="#divTecnico">Datos del tecnico</a></li>
+                  <li><a class="dropdown-item" href="#divDatosSucursal">Datos de la sucursal</a></li>
+                  <li><a class="dropdown-item" href="#divDatosCajeros">Datos del cajero</a></li>
+                  <li><a class="dropdown-item" href="#divDatoSoft">Datos de Red/Pc</a></li>
+                  <li><a class="dropdown-item" href="#divDatosInstalacion">Datos de instalación</a></li>
+                  <li><a class="dropdown-item" href="#divElectricidad">Datos del eletricidad</a></li>
+                </ul>
+            </div>
+            <h3 id="titulo">Carpetas BNA</h3>
+        </div>
+    </nav>
 
+    <img id="wallpaper" src="/CarpetasBNA/Styles/wallpaper.jpg">
     <div id="divTecnico">
 
         <h3>Datos del Tecnico</h3>
@@ -135,14 +153,19 @@
     
 <div id="divDatosInstalacion">
 
+    <h3>Datos de la instalación</h3>
+
     <p>1_ Condiciones de recinto</p>
     <select name="recintoATM" id="recintoATM">
         <option value=1>Buenas</option>
         <option value=2>Regulares</option>
         <option value=3>Malas</option>
     </select>
-    <label for="recintoObservaciones">Observaciones de recinto</label>
-    <input type="text" id="recintoObservaciones" class="form-control-sm"">
+    <div class="form-floating mb-3">
+        <input type="text" id="recintoObservaciones" class="form-control" placeholder="Observaciones de recinto">
+        <label for="recintoObservaciones">Observaciones de recinto</label>
+    </div>
+    
     <p>2_ Capacitacion de operadores?</p>
     <select name="capOperadores" id="capOperadores">
         <option value="Si">Si</option>
@@ -181,12 +204,18 @@
         <option value="Dentro del ATM">Dentro del ATM</option>
     </select>
     <p>8_ Recepcion de insumos</p>
-    <label for="rollosCliente">Rollos para impresora de cliente</label>
-    <input type="number" id="rollosCliente" class="form-control-sm">
-    <label for="rollosAuditoria">Rollos para impresora de auditoria</label>
-    <input type="number" id="rollosAuditoria" class="form-control-sm">
-    <label for="cantCartuchos">Cartuchos de tinta para cheques</label>
-    <input type="number" id="cantCartuchos" class="form-control-sm">
+    <div class="form-floating mb-3">
+        <input type="number" id="rollosCliente" class="form-control" placeholder="Rollos de cliente">
+        <label for="rollosCliente">Impresora de cliente</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="number" id="rollosAuditoria" class="form-control" placeholder="Rollos de auditoria">
+        <label for="rollosAuditoria">Impresora de Auditoria</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="number" id="cantCartuchos" class="form-control" placeholder="Tinta para cheques">
+        <label for="cantCartuchos">Tinta para cheques</label>
+    </div>
     <p>9_ Auditoria centralizada</p>
     <select name="" id="auditoriaCentralizada">
         <option value="Si">Si</option>
@@ -215,6 +244,7 @@
 
 <div id="divElectricidad">
 
+    <h3>Datos de elecetricidad</h3>
     <p>UPS</p>
     <select name="" id="UPS">
         <option value="Si">Si</option>
@@ -251,10 +281,10 @@
         <option value="No">No</option>
     </select>
     <label for="otrosElementos">Otros Elementos conectados al tablero C</label>
-    <input type="text" id="valoresTierra">
+    <input type="text" id="otrosElementos">
 
 </div>
-<button id="cargarPDF"  class="btn btn-outline-primary">Cargar PDF</button>
+<button id="cargarPDF"  class="btn btn-primary">Cargar PDF</button>
 
 <script src="JS/script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
