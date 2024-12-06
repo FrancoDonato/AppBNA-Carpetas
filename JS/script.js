@@ -847,6 +847,7 @@ function datosInstalacion(recintoATM, recintoObservaciones, capOperadores, horas
         )
 }
 
+<<<<<<< HEAD:JS/script.js
 function datosElectricos(ups, tableroC, alimentacionTableroC, estabilizador, nombreEstabilizador, puestaTierra, valoresTierra, C_soloATM, otrosElementos, pages)
 {
 
@@ -987,3 +988,9 @@ function datosElectricos(ups, tableroC, alimentacionTableroC, estabilizador, nom
         }
     )
 }
+=======
+//function datosElectricos()
+//{
+//
+//}
+>>>>>>> 9edb4ef3dace2aa96e6252a3b02dc01e64735546:CarpetasBNA/JS/script.js
