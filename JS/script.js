@@ -133,7 +133,7 @@ function datosTecnico(NombreTecnico, ApellidoTecnico, legajoTecnico, fechaInstal
         {
          x: 250,
          y: 80,
-         size: 10,
+         size: 14,
         });        
 
      i++;
@@ -426,6 +426,15 @@ switch(modeloNuevo){
     
         );
        
+        PaginaActual = pages[9];
+        PaginaActual.drawText(idCajero,
+            {
+                x: 380,
+                y: 770,
+                size: 10,
+            }
+    
+        );
         PaginaActual = pages[10];
         PaginaActual.drawText("" + idCajero,
                 {
