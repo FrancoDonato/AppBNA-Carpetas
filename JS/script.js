@@ -429,7 +429,7 @@ switch(modeloNuevo){
         PaginaActual = pages[9];
         PaginaActual.drawText(idCajero,
             {
-                x: 380,
+                x: 375,
                 y: 770,
                 size: 10,
             }
