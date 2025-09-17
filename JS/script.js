@@ -162,7 +162,7 @@ function datosTecnico(NombreTecnico, ApellidoTecnico, legajoTecnico, fechaInstal
     PaginaActual.drawText("" + fechaInstalacion,
             {
                 x: 450,
-                y: 770,
+                y: 760,
                 size: 10,
             }
     
@@ -253,7 +253,7 @@ function datoSucursal(codigoSuc, nombreSuc, provinciaSuc, localidadSuc, direccio
     PaginaActual.drawText("" + codigoSuc,
             {
                 x: 80,
-                y: 770,
+                y: 760,
                 size: 10,
             }
     
@@ -262,7 +262,7 @@ function datoSucursal(codigoSuc, nombreSuc, provinciaSuc, localidadSuc, direccio
     PaginaActual.drawText("" + nombreSuc.toUpperCase(),
                 {
                     x: 180,
-                    y: 770,
+                    y: 760,
                     size: 10,
                 }
         
@@ -272,7 +272,7 @@ function datoSucursal(codigoSuc, nombreSuc, provinciaSuc, localidadSuc, direccio
     PaginaActual.drawText("" + codigoSuc,
             {
                 x: 110,
-                y: 685,
+                y: 690,
                 size: 10,
             }
     
@@ -344,7 +344,7 @@ switch(modeloNuevo){
             PaginaActual.drawText("CT 100D RL",
                 {
                     x: 300,
-                    y: 685,
+                    y: 690,
                     size: 10,
                 }
             
@@ -362,7 +362,7 @@ switch(modeloNuevo){
             PaginaActual.drawText("CD 100D FL",
                 {
                     x: 300,
-                    y: 685,
+                    y: 690,
                     size: 10,
                 }
             
@@ -380,7 +380,7 @@ switch(modeloNuevo){
             PaginaActual.drawText("FET 200V RL",
                 {
                     x: 300,
-                    y: 685,
+                    y: 690,
                     size: 10,
                 }
             
@@ -398,7 +398,7 @@ switch(modeloNuevo){
             PaginaActual.drawText("FECT 200V RL",
                 {
                     x: 300,
-                    y: 685,
+                    y: 690,
                     size: 10,
                 }
             
@@ -430,7 +430,7 @@ switch(modeloNuevo){
         PaginaActual.drawText(idCajero,
             {
                 x: 375,
-                y: 770,
+                y: 760,
                 size: 10,
             }
     
@@ -439,7 +439,7 @@ switch(modeloNuevo){
         PaginaActual.drawText("" + idCajero,
                 {
                     x: 450,
-                    y: 685,
+                    y: 690,
                     size: 8,
                 }
         
@@ -448,7 +448,7 @@ switch(modeloNuevo){
             PaginaActual.drawText("" + serieNuevo,
                 {
                     x: 200,
-                    y: 685,
+                    y: 690,
                     size: 8,
                 }
         
@@ -597,7 +597,7 @@ function datosInstalacion(recintoATM, recintoObservaciones, capOperadores, horas
     PaginaActual.drawText(horasCapacitacion,
         {
             x: 370,
-            y: 225,
+            y: 220,
             size: 12,
         }
     )
@@ -800,7 +800,7 @@ function datosInstalacion(recintoATM, recintoObservaciones, capOperadores, horas
     PaginaActual.drawText(idNoVidente,
         {
             x: 405,
-            y: 205,
+            y: 215,
             size: 14,
         }
     )
@@ -867,7 +867,7 @@ function datosElectricos(ups, tableroC, alimentacionTableroC, estabilizador, nom
         PaginaActual.drawText("Si", 
             {
                 x: 130,
-                y: 630,
+                y: 620,
                 size: 14,
             }
         )}
@@ -875,7 +875,7 @@ function datosElectricos(ups, tableroC, alimentacionTableroC, estabilizador, nom
         PaginaActual.drawText("No", 
             {
                 x: 280,
-                y: 630,
+                y: 620,
                 size: 14,
             }
         )
@@ -885,7 +885,7 @@ function datosElectricos(ups, tableroC, alimentacionTableroC, estabilizador, nom
         PaginaActual.drawText("Si", 
             {
                 x: 130,
-                y: 560,
+                y: 550,
                 size: 14,
             }
         )
@@ -894,7 +894,7 @@ function datosElectricos(ups, tableroC, alimentacionTableroC, estabilizador, nom
         PaginaActual.drawText("No",
             {
                 x: 280,
-                y: 560,
+                y: 550,
                 size: 14,
             }
         )
@@ -904,7 +904,7 @@ function datosElectricos(ups, tableroC, alimentacionTableroC, estabilizador, nom
         PaginaActual.drawText("Si",
             {
                 x:130,
-                y:490,
+                y:480,
                 size:14,
             })
     }
@@ -912,7 +912,7 @@ function datosElectricos(ups, tableroC, alimentacionTableroC, estabilizador, nom
         PaginaActual.drawText("No",
             {
                 x:280,
-                y:490,
+                y:480,
                 size:14,
             })
     }
@@ -921,14 +921,14 @@ function datosElectricos(ups, tableroC, alimentacionTableroC, estabilizador, nom
         PaginaActual.drawText("Si",
             {
                 x:130,
-                y:422,
+                y:412,
                 size:14,
             })
 
             PaginaActual.drawText(nombreEstabilizador,
                 {
                     x:180,
-                    y:390,
+                    y:380,
                     size:14,
                 })
 
@@ -937,7 +937,7 @@ function datosElectricos(ups, tableroC, alimentacionTableroC, estabilizador, nom
         PaginaActual.drawText("No",
             {
                 x:280,
-                y:422,
+                y:412,
                 size:14,
             })
     }
@@ -946,7 +946,7 @@ function datosElectricos(ups, tableroC, alimentacionTableroC, estabilizador, nom
         PaginaActual.drawText("Si",
             {
                 x:130,
-                y:300,
+                y:290,
                 size:14,
             }
         )
@@ -954,7 +954,7 @@ function datosElectricos(ups, tableroC, alimentacionTableroC, estabilizador, nom
         PaginaActual.drawText(valoresTierra,
             {
                 x:130,
-                y:272,
+                y:262,
                 size:14,
             }
         )
@@ -963,7 +963,7 @@ function datosElectricos(ups, tableroC, alimentacionTableroC, estabilizador, nom
         PaginaActual.drawText("No",
             {
                 x:280,
-                y:300,
+                y:290,
                 size:14,
             }
         )
@@ -974,7 +974,7 @@ function datosElectricos(ups, tableroC, alimentacionTableroC, estabilizador, nom
         PaginaActual.drawText("Si",
             {
             x:130,
-            y:215,
+            y:205,
             size:14
             }
         )
@@ -983,7 +983,7 @@ function datosElectricos(ups, tableroC, alimentacionTableroC, estabilizador, nom
         PaginaActual.drawText("No",
             {
             x:300,
-            y:215,
+            y:205,
             size:14
             }
         )
@@ -992,7 +992,7 @@ function datosElectricos(ups, tableroC, alimentacionTableroC, estabilizador, nom
     PaginaActual.drawText(otrosElementos,
         {
             x:100,
-            y:170,
+            y:160,
             size:14
         }
     )
