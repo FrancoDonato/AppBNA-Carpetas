@@ -5,7 +5,10 @@ document.getElementById('cargarPDF').addEventListener('click', async function ()
     var NombreTecnico = document.getElementById("NombreTecnico").value;
     var ApellidoTecnico = document.getElementById("ApellidoTecnico").value;
     var legajoTecnico = document.getElementById("legajoTecnico").value;
-    var fechaInstalacion = document.getElementById("fechaInstalacion").value;
+    var fecha = document.getElementById("fechaInstalacion").value;
+
+        const [year, month, day] = fecha.split("-");
+        const fechaInstalacion = `${day}-${month}-${year}`;    
 
     var idCajero = document.getElementById("idCajero").value;
     var serieNuevo = document.getElementById("serieNuevo").value;
