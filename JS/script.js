@@ -164,7 +164,7 @@ function datosTecnico(NombreTecnico, ApellidoTecnico, legajoTecnico, fechaInstal
     PaginaActual = pages[9];
     PaginaActual.drawText("" + fechaInstalacion,
             {
-                x: 450,
+                x: 440,
                 y: 760,
                 size: 10,
             }
@@ -187,30 +187,30 @@ function datoSucursal(codigoSuc, nombreSuc, provinciaSuc, localidadSuc, direccio
     );
     PaginaActual.drawText("" + nombreSuc.toUpperCase(),
         {
-            x:370,
+            x:317,
             y:538,
-            size:16,
+            size:10,
         }
     );
     PaginaActual.drawText("" + direccionSuc.toUpperCase(),
         {
-            x:150,
+            x:140,
             y:477,
-            size:16,
+            size:14,
         }
     );
     PaginaActual.drawText("" + localidadSuc.toUpperCase(),
         {
-            x:150,
+            x:140,
             y:457,
-            size:16,
+            size:14,
         }
     );
     PaginaActual.drawText("" + provinciaSuc.toUpperCase(),
         {
-            x:150,
+            x:140,
             y:437,
-            size:16,
+            size:14,
         }
     );
 
@@ -227,9 +227,9 @@ function datoSucursal(codigoSuc, nombreSuc, provinciaSuc, localidadSuc, direccio
     );
     PaginaActual.drawText("" + nombreSuc.toUpperCase(),
         {
-            x:200,
+            x:192,
             y:395,
-            size:10,
+            size:8,
         }
     );
 
@@ -240,7 +240,7 @@ function datoSucursal(codigoSuc, nombreSuc, provinciaSuc, localidadSuc, direccio
         {
             x: 80,
             y: 550,
-            size: 18,
+            size: 14,
         }
 
     );
@@ -248,7 +248,7 @@ function datoSucursal(codigoSuc, nombreSuc, provinciaSuc, localidadSuc, direccio
         {
             x:150,
             y:550,
-            size:18,
+            size:14,
         }
     );
 
@@ -264,9 +264,9 @@ function datoSucursal(codigoSuc, nombreSuc, provinciaSuc, localidadSuc, direccio
 
     PaginaActual.drawText("" + nombreSuc.toUpperCase(),
                 {
-                    x: 180,
+                    x: 160,
                     y: 760,
-                    size: 10,
+                    size: 8,
                 }
         
             );
